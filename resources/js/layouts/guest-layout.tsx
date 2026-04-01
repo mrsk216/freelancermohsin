@@ -1,12 +1,12 @@
 import { Link, usePage } from '@inertiajs/react';
-import { Home, Info, BookOpen, FolderOpenDot, Mails, PhoneCall, Mail, Facebook, MessageCircle, Youtube, Github, Linkedin, Menu } from 'lucide-react';
+import { Home, Info, BookOpen, FolderOpenDot, Mails, PhoneCall, Mail, Facebook, MessageCircle, Youtube, Github, Linkedin } from 'lucide-react';
 import AppLogo from '@/components/app-logo';
 import type { AppLayoutProps } from '@/types';
 
 export default ({ children }: AppLayoutProps) => (
     <>
         <nav className="bg-gray-100">
-            <div className="flex w-full lg:w-9/12 xl:w-8/12 mx-auto items-center justify-center lg:justify-between px-3 py-4">
+            <div className="flex w-full lg:w-10/12 xl:w-8/12 mx-auto items-center justify-center lg:justify-between px-3 py-4">
                 <div>
                     <Link
                         href={'/'}
@@ -17,7 +17,7 @@ export default ({ children }: AppLayoutProps) => (
                     </Link>
                 </div>
                 {/* Desktop Navigation */}
-                <ul className="hidden lg:flex gap-4">
+                <ul className="hidden lg:flex gap-8">
                     <li><Link href="/" className={usePage().url === '/' ? 'font-bold text-gray-800' : 'font-bold text-gray-500 hover:text-gray-800'}>Home</Link></li>
                     <li><Link href="/about" className={usePage().url === '/about' ? 'font-bold text-gray-800' : 'font-bold text-gray-500 hover:text-gray-800'}>About</Link></li>
                     <li><Link href="/projects" className={usePage().url === '/projects' ? 'font-bold text-gray-800' : 'font-bold text-gray-500 hover:text-gray-800'}>Projects</Link></li>
@@ -30,7 +30,7 @@ export default ({ children }: AppLayoutProps) => (
             {children}
         </div>
         <footer className="bg-gray-900">
-            <div className="w-full lg:w-9/12 xl:w-8/12 mx-auto px-3">
+            <div className="w-full lg:w-10/12 xl:w-8/12 mx-auto px-3">
                 <div className="block lg:flex justify-between gap-3 py-8">
                     <div className="w-full md:w-1/2 xl:w-1/3 text-white">
                         <h2 className="text-4xl/12 font-extrabold mb-5">Let's Do Something Great Together</h2>

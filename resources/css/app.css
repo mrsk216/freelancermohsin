@@ -70,7 +70,7 @@
     --card-foreground: oklch(0.145 0 0);
     --popover: oklch(1 0 0);
     --popover-foreground: oklch(0.145 0 0);
-    --primary: oklch(0.205 0 0);
+    --primary: oklab(69.62% 0.16524 0.10448);
     --primary-foreground: oklch(0.985 0 0);
     --secondary: oklch(0.97 0 0);
     --secondary-foreground: oklch(0.205 0 0);
@@ -142,4 +142,69 @@
     body {
         @apply bg-background text-foreground;
     }
+}
+
+section{
+    padding-top: 150px;
+    padding-bottom: 150px;
+}
+
+/* Word Change Animation Css */
+.change-word-wrapper {
+    position: relative;
+    display: block;
+    height: 65px;
+}
+
+.change-word {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.letter {
+    display: inline-block;
+    position: relative;
+    transform: translateZ(0);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.letter.out {
+    transform: translateY(-40%);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.letter.in {
+    transform: translateY(0%);
+    opacity: 1;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.letter.behind {
+    transform: translateY(40%);
+    opacity: 0;
+}
+
+/* Button Styles */
+.btn{
+    background-color: var(--color-primary);
+    color: var(--color-primary-foreground);
+}
+
+/*Text Styles */
+.text-primary{
+    color: var(--color-primary);
+}
+
+/*Background Styles */
+.bg-primary{
+    background-color: var(--color-primary);
+}
+.hover\:bg-primary:hover{
+    background-color: var(--color-primary);
 }
