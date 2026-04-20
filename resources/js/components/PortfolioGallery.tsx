@@ -1,8 +1,9 @@
 import Isotope from 'isotope-layout';
 import React, { useEffect, useRef, useState } from 'react';
 import './../../css/portfolio-filter-gallery.css';
+import { useTheme } from '@/hooks/use-theme';
 
-type Project = {
+export type Project = {
     category: string;
     image: string;
     name: string;
@@ -14,6 +15,7 @@ type PortfolioGalleryProps = {
 };
 
 const PortfolioGallery = ({ projects }: PortfolioGalleryProps) => {
+    const { theme } = useTheme();
     const gridRef = useRef<HTMLDivElement>(null);
     const isotopeRef = useRef<Isotope | null>(null);
     const [activeFilter, setActiveFilter] = useState('.frontend');
@@ -135,15 +137,23 @@ const PortfolioGallery = ({ projects }: PortfolioGalleryProps) => {
                     >
                         <div className="filter-img-block relative image-container translate-effect-right overflow-hidden rounded-xl shadow-lg">
                             <img src={data.image} alt={data.name} className='w-full h-full rounded-xl' />
-                            <div className="img-filter-overlay fables-main-color-transparent row m-0">
-                                <div className="text-white mb-4 p-4">
-                                    <h5 className="text-xl font-bold text-shadow">{data.name}</h5>
-                                    <p className="line-clamp-2 text-sm mb-2">{data.title}</p>
-                                    <a href={`/projects/${data.name}`}>
+                            <a href={`/projects/${data.name}`}>
+                                <div
+                                    className="img-filter-overlay row m-0"
+                                    style={{
+                                        background:
+                                            theme === 'dark'
+                                                ? "linear-gradient(0deg, #25375b, #243b68,rgba(61, 96, 165, 0.91),rgba(37, 55, 91, 0.47), transparent)"
+                                                : "linear-gradient(0deg, #ff6347, #ff6347, #ff6347e6,rgba(255, 99, 71, 0.46), transparent)"
+                                    }}
+                                >                           
+                                    <div className="text-white mb-4 p-4">
+                                        <h5 className="line-clamp-1 text-xl font-bold text-shadow mb-3">{data.name}</h5>
+                                        <p className="line-clamp-2 text-sm mb-2">{data.title}</p>
                                         <span className="text-white">More Details</span>
-                                    </a>
+                                    </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                     </div>
                 ))}

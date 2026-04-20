@@ -6,7 +6,7 @@
 
 .fables-forth-text-color {
     margin-right: 6px;
-    color: #666;
+    color: var(--color-foreground);
     text-decoration: none;
     border: 1px solid #ccc;
     padding: 4px 15px;
@@ -106,6 +106,18 @@
     padding: 15px;
 }
 
+@media (max-width: 991.98px) {
+    .gallery-filter .portfolioContainer .gallery-item {
+        width: 50%;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .gallery-filter .portfolioContainer .gallery-item {
+        width: 100%;
+    }
+}
+
 .gallery-filter .portfolioContainer img {
     width: 100%;
     height: 100%;
@@ -142,25 +154,31 @@
 
 .img-filter-overlay {
     position: absolute;
-    top: auto;
+    top: 0;
     bottom: 0;
     left: 0;
     right: 0;
     padding: 0;
-    background: linear-gradient(0deg, #ff6347, #ff6347, #ff6347e6, #ff634761, transparent);
     transition: .5s;
     transform-origin: bottom;
-    transform: translateY(85px);
+    transform: translateY(50%);
 }
 
-.img-filter-overlay p {
+.img-filter-overlay > div {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.img-filter-overlay h5 {
     transition: .5s;
     transform-origin: top;
-    transform: translateY(25px);
+    transform: translateY(-30px);
 }
 
 .filter-img-block:hover .img-filter-overlay,
-.filter-img-block:hover .img-filter-overlay p {
+.filter-img-block:hover .img-filter-overlay h5 {
     transform: translateY(0px);
 }
 
