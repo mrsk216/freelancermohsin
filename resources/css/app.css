@@ -234,6 +234,26 @@ section{
     letter-spacing: 1.2px;
 }
 
+/* Button Loading Ellipsis */
+[data-slot='button'][data-loading='true']::after {
+    content: '...';
+    display: inline-block;
+    width: 0;
+    margin-left: 4px;
+    overflow: hidden;
+    vertical-align: bottom;
+    animation: button-ellipsis 1.2s steps(4, end) infinite;
+}
+
+@keyframes button-ellipsis {
+    from {
+        width: 0;
+    }
+    to {
+        width: 1.2em;
+    }
+}
+
 /*Text Styles */
 .text-primary{
     color: var(--color-primary);
@@ -570,3 +590,14 @@ section{
     }
 }
 /* End Work Process */
+
+@keyframes skillFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(18px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}

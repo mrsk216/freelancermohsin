@@ -39,19 +39,38 @@ function Button({
   variant,
   size,
   asChild = false,
+  loading,
+  children,
+  disabled,
   ...props
 }: React.ComponentProps<"button"> &
   VariantProps<typeof buttonVariants> & {
     asChild?: boolean
+    loading?: boolean
   }) {
   const Comp = asChild ? Slot : "button"
+  const isLoading = loading ?? Boolean(disabled)
+  const hasSpinnerChild = React.Children.toArray(children).some((child) => {
+    if (!React.isValidElement(child) || typeof child.type === "string") {
+      return false
+    }
+
+    const componentType = child.type as { name?: string; displayName?: string }
+    return componentType.name === "Spinner" || componentType.displayName === "Spinner"
+  })
+  const showAnimatedEllipsis = isLoading && !hasSpinnerChild
 
   return (
     <Comp
       data-slot="button"
+      data-loading={showAnimatedEllipsis ? "true" : "false"}
+      aria-busy={isLoading ? "true" : undefined}
+      disabled={disabled || isLoading}
       className={cn(buttonVariants({ variant, size, className }))}
       {...props}
-    />
+    >
+      {children}
+    </Comp>
   )
 }
 

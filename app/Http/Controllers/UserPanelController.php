@@ -652,4 +652,33 @@ class UserPanelController extends Controller
             'whyBestArray' => $whyBestArray,
         ]);
     }
+
+    public function about()
+    {
+        $skills = [
+            ['name' => 'HTML', 'icon' => '/assets/images/skills/html-5.png', 'percentage' => '95'],
+            ['name' => 'CSS', 'icon' => '/assets/images/skills/css-3.png', 'percentage' => '92'],
+            ['name' => 'Bootstrap', 'icon' => '/assets/images/skills/bootstrap.png', 'percentage' => '95'],
+            ['name' => 'Tailwind CSS', 'icon' => '/assets/images/skills/tailwindcss.png', 'percentage' => '90'],
+            ['name' => 'SASS/SCSS', 'icon' => '/assets/images/skills/sass.png', 'percentage' => '85'],
+            ['name' => 'JavaScript', 'icon' => '/assets/images/skills/js.png', 'percentage' => '72'],
+            ['name' => 'ES6', 'icon' => '/assets/images/skills/es6.png', 'percentage' => '95'],
+            ['name' => 'Jquery', 'icon' => '/assets/images/skills/jquery.png', 'percentage' => '80'],
+            ['name' => 'Ajax', 'icon' => '/assets/images/skills/ajax.png', 'percentage' => '85'],
+            ['name' => 'React JS', 'icon' => '/assets/images/skills/reactjs.png', 'percentage' => '85'],
+            ['name' => 'Next JS', 'icon' => '/assets/images/skills/nextjs.png', 'percentage' => '85'],
+            ['name' => 'Node JS', 'icon' => '/assets/images/skills/node-js.png', 'percentage' => '75'],
+            ['name' => 'Express JS', 'icon' => '/assets/images/skills/expressjs.png', 'percentage' => '82'],
+            ['name' => 'PHP', 'icon' => '/assets/images/skills/php.png', 'percentage' => '80'],
+            ['name' => 'Laravel', 'icon' => '/assets/images/skills/laravel.png', 'percentage' => '90'],
+            ['name' => 'MySQL', 'icon' => '/assets/images/skills/mysql.png', 'percentage' => '78'],
+            ['name' => 'MongoDB', 'icon' => '/assets/images/skills/mongodb.png', 'percentage' => '70'],
+            ['name' => 'Git', 'icon' => '/assets/images/skills/git.png', 'percentage' => '95'],
+            ['name' => 'Github', 'icon' => '/assets/images/skills/github.png', 'percentage' => '95'],
+            ['name' => 'Wordpress', 'icon' => '/assets/images/skills/wordpress.png', 'percentage' => '60'],
+        ];
+        return Inertia::render('about', [
+            'skills' => $skills
+        ]);
+    }
 }

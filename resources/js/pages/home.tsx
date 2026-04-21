@@ -30,7 +30,7 @@ export default function Home({ projects, whyBestArray }: HomeProps) {
             <Head title="Home" />
             <section
                 data-guest-hero
-                className='w-full h-[calc(100vh-76px)] bg-[#ffffffba] dark:bg-[#000000ba] bg-[url("/assets/images/bg/hero.png")] dark:bg-[url("/assets/images/bg/hero-dark.jpg")] bg-no-repeat bg-blend-overlay lg:bg-blend-normal bg-left lg:bg-cover lg:bg-center flex items-center mt-8'
+                className='w-full h-[calc(100vh-76px)] bg-[#ffffffba] dark:bg-[#000000ba] bg-[url("/assets/images/bg/hero.png")] dark:bg-[url("/assets/images/bg/hero-dark.jpg")] bg-no-repeat bg-blend-overlay lg:bg-blend-normal bg-left lg:bg-cover lg:bg-center flex items-center mt-[65px]'
             >
                 <div className="w-full lg:w-10/12 xl:w-8/12 h-full mx-auto px-4">
                     <div className="flex justify-center lg:justify-start h-full">

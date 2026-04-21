@@ -155,6 +155,7 @@ export default function GuestLayout({ children }: AppLayoutProps) {
                     <div className="w-full text-white text-sm text-center border-t py-4">© Copyright {new Date().getFullYear()} . Made by Shekh Md Mohsin</div>
                 </div>
             </footer>
+            <Link className='btn fixed top-1/2 left-[-3.8%] rotate-90 !tracking-[3px] font-black px-8 py-4'>Download CV</Link>
             {/* Mobile Navigation */}
             <div className="fixed bottom-0 left-0 w-full bg-gray-100 dark:bg-gray-900 lg:hidden">
                 <ul className="flex justify-around py-3">
